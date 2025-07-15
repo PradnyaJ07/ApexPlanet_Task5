@@ -1,0 +1,141 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7); /* Transparent black */
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+.nav-links a:hover,
+.nav-links .active {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  background: url("/Images/bg.jpg") no-repeat center center/cover;
+  height: 700px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+.hero-text h1 {
+  font-size: 3rem;
+}
+.hero-text .btn {
+  padding: 10px 20px;
+  margin-top: 1rem;
+  background-color: #fff;
+  color: #ff5e5e;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.product-card h3 {
+  margin: 0.5rem 0;
+}
+.product-card p {
+  font-weight: bold;
+  color: #ff5e5e;
+}
+.product-card button {
+  margin-bottom: 1rem;
+  padding: 10px 20px;
+  background: #ff5e5e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.product-card button:hover {
+  background: #ff2e2e;
+}
+
+/* Cart */
+.cart-container {
+  padding: 2rem;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.cart-total {
+  text-align: right;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .carousel-img {
+    height: 250px;
+  }
+}

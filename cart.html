@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart - SweetTreats</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">SweetTreats Bakery</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="cart.html" class="active">Cart</a></li>
+    </ul>
+  </nav>
+
+  <h2 style="text-align:center; margin:1rem;">Your Cart</h2>
+  <div class="cart-container" id="cartContainer"></div>
+
+  <script>
+    const cartContainer = document.getElementById("cartContainer");
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCart() {
+      cartContainer.innerHTML = "";
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price * item.qty;
+        cartContainer.innerHTML += `
+          <div class="cart-item">
+            <div>
+              <img src="${item.image}" alt="${item.name}" />
+              <p><strong>${item.name}</strong> (x${item.qty})</p>
+            </div>
+            <button onclick="removeItem(${index})">Remove</button>
+          </div>
+        `;
+      });
+      cartContainer.innerHTML += `<div class="cart-total">Total: ₹${total}</div>`;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+
+</body>
+</html>
